@@ -23,10 +23,10 @@ export const Wrapper = styled('header', {
   variants: {
     active: {
       true: {
-        boxShadow: 'none',
-        borderBottom: 'none',
-        backgroundColor: 'transparent',
+        boxShadow: 'none !important',
+        borderBottom: 'none !important',
         transition: 'background-color 0s',
+        backgroundColor: 'transparent !important',
       },
     },
     scrolledDown: {

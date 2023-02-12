@@ -44,8 +44,7 @@ export function Menu({ active }: MenuProps) {
             <a href="https://www.google.com/maps/place/R.+Bar%C3%A3o+de+Paranapiacaba,+233+-+Encruzilhada,+Santos+-+SP,+11050-251/data=!4m2!3m1!1s0x94ce030cefa2ee17:0x516751d13a37e95?sa=X&ved=2ahUKEwjx2-nxzo79AhUfGbkGHY4GAkAQ8gF6BAgNEAI">
               Barão Offices <br /> <br />
               Rua Barão de Paranapiacaba, 233 <br />
-              Encruzilhada <br />
-              Santos - SP <br />
+              Encruzilhada, Santos - SP <br />
               CEP 11050-251
             </a>
           </Address>
