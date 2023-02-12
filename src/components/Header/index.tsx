@@ -11,7 +11,7 @@ export function Header() {
     <>
       <Menu active={isMenuActive} />
 
-      <Wrapper>
+      <Wrapper active={isMenuActive}>
         <Content>
           <Logo href="/" active={isMenuActive}>
             Agência<span>.</span>

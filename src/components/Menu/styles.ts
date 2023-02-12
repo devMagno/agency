@@ -31,7 +31,7 @@ export const Wrapper = styled('div', {
 export const Content = styled('div', {
   width: '100%',
   height: '100%',
-  padding: '60px 40px 40px',
+  padding: '80px 40px 40px',
 
   '@md': {
     padding: '150px',

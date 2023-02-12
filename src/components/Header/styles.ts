@@ -17,6 +17,14 @@ export const Wrapper = styled('header', {
   '@md': {
     borderBottom: 'none',
   },
+
+  variants: {
+    active: {
+      true: {
+        borderBottom: 'none',
+      },
+    },
+  },
 })
 
 export const Content = styled('div', {
