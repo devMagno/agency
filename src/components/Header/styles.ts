@@ -7,7 +7,7 @@ export const Wrapper = styled('header', {
   height: 'auto',
   padding: '0 $containerPadding',
   backgroundColor: 'transparent',
-  borderBottom: '1px solid $borderColor',
+  borderBottom: '1px solid rgba(255, 255, 255, .15)',
 
   top: 0,
   left: 0,
@@ -37,6 +37,18 @@ export const Logo = styled(Link, {
   span: {
     color: '$white',
   },
+
+  variants: {
+    active: {
+      true: {
+        opacity: 0,
+      },
+      false: {
+        opacity: 1,
+        transition: 'all 1s',
+      },
+    },
+  },
 })
 
 export const MenuButtonWrapper = styled('div', {
@@ -54,13 +66,29 @@ export const MenuButtonWrapper = styled('div', {
     marginTop: '2px',
     marginRight: '4px',
   },
+
+  variants: {
+    active: {
+      true: {
+        '> span': {
+          opacity: 0,
+        },
+      },
+      false: {
+        '> span': {
+          opacity: 1,
+          transition: 'all 1s',
+        },
+      },
+    },
+  },
 })
 
 export const MenuButton = styled('button', {
   width: '46px',
   height: '46px',
   position: 'relative',
-  backgroundColor: 'transparent',
+  borderRadius: '$full',
 
   display: 'flex',
 
@@ -72,17 +100,51 @@ export const MenuButton = styled('button', {
     display: 'block',
     position: 'absolute',
     backgroundColor: '$white',
-
-    '&:nth-child(1)': {
-      top: '14px',
-    },
+    transition: 'all .25s ease-in-out',
 
     '&:nth-child(2)': {
       top: '22px',
     },
+  },
 
-    '&:nth-child(3)': {
-      top: '30px',
+  variants: {
+    active: {
+      true: {
+        backgroundColor: '$primary',
+
+        span: {
+          '&:nth-child(1)': {
+            top: '22px',
+            transform: 'rotate(135deg)',
+          },
+
+          '&:nth-child(2)': {
+            opacity: 0,
+          },
+
+          '&:nth-child(3)': {
+            top: '22px',
+            transform: 'rotate(-135deg)',
+          },
+        },
+      },
+      false: {
+        backgroundColor: 'transparent',
+
+        span: {
+          '&:nth-child(1)': {
+            top: '14px',
+          },
+
+          '&:nth-child(2)': {
+            opacity: 1,
+          },
+
+          '&:nth-child(3)': {
+            top: '30px',
+          },
+        },
+      },
     },
   },
 })

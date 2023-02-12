@@ -5,7 +5,6 @@ export const { styled, getCssText, globalCss, keyframes } = createStitches({
     colors: {
       black: '#000',
       white: '#FFF',
-      borderColor: 'rgba(255, 255, 255, .15)',
 
       primary: '#ff8900',
       secondary: '#212121',
