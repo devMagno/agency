@@ -1,6 +1,6 @@
 import { Button } from '@/components/Button'
 
-import { Text, Title, Wrapper } from './styles'
+import { Text, Title, Wrapper } from '../../styles/pages/404'
 
 export default function Custom404() {
   return (
