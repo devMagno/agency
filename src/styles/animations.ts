@@ -1,4 +1,4 @@
-import { keyframes } from 'stitches.config'
+import { keyframes } from '@/styles'
 
 export const btnOut = keyframes({
   '100%': {

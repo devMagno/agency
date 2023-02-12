@@ -1,6 +1,6 @@
-import { styled } from 'stitches.config'
-
 import Link from 'next/link'
+
+import { styled } from '@/styles'
 
 export const Wrapper = styled('header', {
   width: '100%',

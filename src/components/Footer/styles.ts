@@ -1,10 +1,9 @@
-import { styled } from 'stitches.config'
-
 import Link from 'next/link'
 
+import { styled } from '@/styles'
+
 export const Wrapper = styled('footer', {
-  // backgroundColor: '$secondary',
-  backgroundColor: '#212121',
+  backgroundColor: '$secondary',
 })
 
 export const Content = styled('div', {

@@ -1,4 +1,4 @@
-import { styled } from 'stitches.config'
+import { styled } from '@/styles'
 
 export const Wrapper = styled('ul', {
   display: 'flex',

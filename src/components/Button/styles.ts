@@ -1,7 +1,6 @@
-import { styled } from 'stitches.config'
-
 import Link from 'next/link'
 
+import { styled } from '@/styles'
 import { btnOut } from '@/styles/animations'
 
 const buttonStyles = {

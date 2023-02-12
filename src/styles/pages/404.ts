@@ -1,4 +1,4 @@
-import { styled } from 'stitches.config'
+import { styled } from '@/styles'
 
 export const Wrapper = styled('main', {
   width: '100%',
