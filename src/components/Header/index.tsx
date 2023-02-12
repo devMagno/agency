@@ -14,6 +14,11 @@ export function Header() {
   }
 
   useEffect(() => {
+    if (isMenuActive) document.body.style.overflow = 'hidden'
+    else document.body.style.overflow = 'unset'
+  }, [isMenuActive])
+
+  useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {

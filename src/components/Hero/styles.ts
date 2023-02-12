@@ -4,7 +4,7 @@ export const Wrapper = styled('div', {
   width: '100%',
   minHeight: '100vh',
   position: 'relative',
-  padding: '0 containerPadding',
+  padding: '0 $containerPadding',
 
   '&::before': {
     content: '',

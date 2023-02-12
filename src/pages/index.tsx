@@ -1,3 +1,4 @@
+import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
 import { Section } from '@/components/Section'
 import { SEO } from '@/components/SEO'
@@ -24,14 +25,6 @@ export default function Home() {
       />
 
       <main>
-        <Section title="Título exemplo" background="light">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
-            eum sit sunt vero nulla, laborum enim at quod dolor iusto quaerat
-            animi! Quidem animi, exercitationem recusandae inventore
-            voluptatibus tempora aspernatur!
-          </p>
-        </Section>
         <Section title="Serviços" background="white">
           <p>
             Trabalhamos com uma linha de criação e estratégia adaptada para o
@@ -47,7 +40,17 @@ export default function Home() {
             marca.
           </p>
         </Section>
+        <Section title="Título exemplo" background="light">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur
+            eum sit sunt vero nulla, laborum enim at quod dolor iusto quaerat
+            animi! Quidem animi, exercitationem recusandae inventore
+            voluptatibus tempora aspernatur!
+          </p>
+        </Section>
       </main>
+
+      <Footer />
     </>
   )
 }

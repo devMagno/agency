@@ -59,6 +59,12 @@ export const Title = styled('h2', {
 
   variants: {
     bg: {
+      white: {
+        color: '$secondary',
+      },
+      light: {
+        color: '$secondary',
+      },
       dark: {
         color: '$white',
       },
