@@ -14,6 +14,8 @@ export const Wrapper = styled('header', {
   zIndex: 10,
   position: 'fixed',
 
+  transition: 'background-color .3s',
+
   '@md': {
     borderBottom: 'none',
   },
@@ -21,7 +23,19 @@ export const Wrapper = styled('header', {
   variants: {
     active: {
       true: {
+        boxShadow: 'none',
         borderBottom: 'none',
+        backgroundColor: 'transparent',
+        transition: 'background-color 0s',
+      },
+    },
+    scrolledDown: {
+      true: {
+        backgroundColor: '$white',
+        boxShadow: '0 1px 20px -3px rgb(0, 0, 0, .15)',
+      },
+      false: {
+        backgroundColor: 'transparent',
       },
     },
   },
@@ -42,10 +56,6 @@ export const Logo = styled(Link, {
   fontSize: '$lg',
   color: '$primary',
 
-  span: {
-    color: '$white',
-  },
-
   variants: {
     active: {
       true: {
@@ -53,7 +63,19 @@ export const Logo = styled(Link, {
       },
       false: {
         opacity: 1,
-        transition: 'all 1s',
+        transition: 'opacity 1s',
+      },
+    },
+    scrolledDown: {
+      true: {
+        span: {
+          color: '$secondary',
+        },
+      },
+      false: {
+        span: {
+          color: '$white',
+        },
       },
     },
   },
@@ -85,7 +107,19 @@ export const MenuButtonWrapper = styled('div', {
       false: {
         '> span': {
           opacity: 1,
-          transition: 'all 1s',
+          transition: 'color .3s, opacity 1s',
+        },
+      },
+    },
+    scrolledDown: {
+      true: {
+        '> span': {
+          color: '$secondary',
+        },
+      },
+      false: {
+        '> span': {
+          color: '$white',
         },
       },
     },
@@ -107,8 +141,7 @@ export const MenuButton = styled('button', {
     height: '2px',
     display: 'block',
     position: 'absolute',
-    backgroundColor: '$white',
-    transition: 'all .25s ease-in-out',
+    transition: 'background-color .3s, transform .25s ease-in-out',
 
     '&:nth-child(2)': {
       top: '22px',
@@ -151,6 +184,18 @@ export const MenuButton = styled('button', {
           '&:nth-child(3)': {
             top: '30px',
           },
+        },
+      },
+    },
+    scrolledDown: {
+      true: {
+        span: {
+          backgroundColor: '$secondary',
+        },
+      },
+      false: {
+        span: {
+          backgroundColor: '$white',
         },
       },
     },

@@ -29,9 +29,12 @@ export const Wrapper = styled('div', {
 })
 
 export const Content = styled('div', {
-  width: '100%',
   height: '100%',
+  margin: '0 auto',
   padding: '80px 40px 40px',
+
+  width: '100%',
+  maxWidth: '$containerMaxWidth',
 
   '@md': {
     padding: '150px',

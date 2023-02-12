@@ -8,6 +8,7 @@ export const { styled, getCssText, globalCss, keyframes } = createStitches({
 
       primary: '#ff8900',
       secondary: '#212121',
+      lightGray: '#f3f3f3',
     },
     fontSizes: {
       xs: '12px',
