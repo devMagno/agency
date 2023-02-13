@@ -7,7 +7,6 @@ export const Wrapper = styled('div', {
   height: '100vh',
   display: 'block',
   backgroundColor: '$secondary',
-  transition: 'all .3s',
 
   top: 0,
   left: 0,
@@ -16,13 +15,19 @@ export const Wrapper = styled('div', {
   zIndex: 10,
   position: 'fixed',
 
+  transition: 'all 0.3s',
+
   variants: {
     active: {
       true: {
-        backgroundColor: 'translateY(0)',
+        height: '100vh',
+        overflowY: 'auto',
+        visibility: 'visible',
       },
       false: {
-        transform: 'translateY(-100%)',
+        height: 0,
+        overflowY: 'hidden',
+        visibility: 'hidden',
       },
     },
   },
