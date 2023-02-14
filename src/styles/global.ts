@@ -36,6 +36,11 @@ export const globalStyles = globalCss({
     cursor: 'pointer',
     border: 'none',
   },
+  img: {
+    display: 'block',
+    maxWidth: '100%',
+    height: 'auto',
+  },
 })
 
 export const MainWrapper = styled('main', {

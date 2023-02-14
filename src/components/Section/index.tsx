@@ -1,25 +1,18 @@
 import { ReactNode } from 'react'
 
-import { Content, Title, Wrapper } from './styles'
+import { background } from '@/types/styles'
+
+import { Wrapper } from './styles'
 
 interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode
-  background?: 'white' | 'light' | 'dark'
-  title?: string
+  bg: background
 }
 
-export function Section({
-  children,
-  background,
-  title,
-  ...rest
-}: SectionProps) {
+export function Section({ children, bg, ...rest }: SectionProps) {
   return (
-    <Wrapper bg={background} {...rest}>
-      <Content>
-        {title && <Title bg={background}>{title}</Title>}
-        {children}
-      </Content>
+    <Wrapper bg={bg} {...rest}>
+      {children}
     </Wrapper>
   )
 }

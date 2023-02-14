@@ -18,24 +18,30 @@ import {
   Wrapper,
 } from './styles'
 
-export function Footer() {
+interface FooterProps {
+  showCallToAction?: boolean
+}
+
+export function Footer({ showCallToAction = true }: FooterProps) {
   return (
     <Wrapper>
-      <Content>
-        <CallToAction>
-          <CallToActionTitle>
-            Vamos começar <br /> um projeto juntos?
-          </CallToActionTitle>
-          <CallToActionButtonWrapper>
-            <p>
-              Seu projeto merece ficar em boas mãos, conte com a nossa agência
-              para isso. Tem todas informações e está preparado? Então vamos
-              começar!
-            </p>
-            <Button>Começar um projeto</Button>
-          </CallToActionButtonWrapper>
-        </CallToAction>
-      </Content>
+      {showCallToAction && (
+        <Content>
+          <CallToAction>
+            <CallToActionTitle>
+              Vamos começar <br /> um projeto juntos?
+            </CallToActionTitle>
+            <CallToActionButtonWrapper>
+              <p>
+                Seu projeto merece ficar em boas mãos, conte com a nossa agência
+                para isso. Tem todas informações e está preparado? Então vamos
+                começar!
+              </p>
+              <Button>Começar um projeto</Button>
+            </CallToActionButtonWrapper>
+          </CallToAction>
+        </Content>
+      )}
       <Content>
         <Menu>
           <MenuColumn>

@@ -26,9 +26,11 @@ export const ItemContent = styled('div', {
   textAlign: 'left',
   position: 'relative',
   padding: '20px 10px 20px 70px',
+  boxShadow: '0 0 30px 0 rgba(0, 0, 0, .05)',
 
   '@md': {
     padding: '35px',
+    boxShadow: 'none',
   },
 })
 
