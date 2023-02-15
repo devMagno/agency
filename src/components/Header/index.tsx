@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
+import clsx from 'clsx'
+
+import Link from 'next/link'
 
 import { Menu } from '../Menu'
 
-import { Content, Logo, MenuButton, MenuButtonWrapper, Wrapper } from './styles'
+import styles from './Header.module.scss'
 
 export function Header() {
   const [isMenuActive, setIsMenuActive] = useState(false)
@@ -23,32 +26,48 @@ export function Header() {
     <>
       <Menu active={isMenuActive} />
 
-      <Wrapper active={isMenuActive} scrolledDown={scrollPosition > 100}>
-        <Content>
-          <Logo
+      <header
+        className={clsx(
+          styles.wrapper,
+          scrollPosition > 100 && styles.scrolledDown,
+          isMenuActive && styles.active,
+        )}
+      >
+        <div className={styles.content}>
+          <Link
             href="/"
-            active={isMenuActive}
-            scrolledDown={scrollPosition > 100}
+            className={clsx(
+              styles.logo,
+              scrollPosition > 100 && styles.scrolledDown,
+              isMenuActive && styles.active,
+            )}
           >
             Agência<span>.</span>
-          </Logo>
-          <MenuButtonWrapper
-            active={isMenuActive}
-            scrolledDown={scrollPosition > 100}
+          </Link>
+          <div
+            className={clsx(
+              styles.menuButtonWrapper,
+              scrollPosition > 100 && styles.scrolledDown,
+              isMenuActive && styles.active,
+            )}
           >
             <span>Menu</span>
-            <MenuButton
+            <button
+              type="button"
               onClick={() => setIsMenuActive((prev) => !prev)}
-              active={isMenuActive}
-              scrolledDown={scrollPosition > 100}
+              className={clsx(
+                styles.menuButton,
+                scrollPosition > 100 && styles.scrolledDown,
+                isMenuActive && styles.active,
+              )}
             >
               <span />
               <span />
               <span />
-            </MenuButton>
-          </MenuButtonWrapper>
-        </Content>
-      </Wrapper>
+            </button>
+          </div>
+        </div>
+      </header>
     </>
   )
 }

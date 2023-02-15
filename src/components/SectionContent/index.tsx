@@ -1,11 +1,11 @@
 import { ReactNode } from 'react'
 
-import { Content } from './styles'
+import styles from './SectionContent.module.scss'
 
 interface SectionContentProps {
   children: ReactNode
 }
 
 export function SectionContent({ children }: SectionContentProps) {
-  return <Content>{children}</Content>
+  return <div className={styles.content}>{children}</div>
 }

@@ -2,16 +2,15 @@ import { Archivo } from '@next/font/google'
 
 import type { AppProps } from 'next/app'
 
-import { globalStyles, MainWrapper } from '@/styles/global'
+import '@/styles/reset.scss'
+import '@/styles/globals.scss'
 
 const archivo = Archivo({ subsets: ['latin'] })
 
-globalStyles()
-
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <MainWrapper className={archivo.className}>
+    <div className={`globalWrapper ${archivo.className}`}>
       <Component {...pageProps} />
-    </MainWrapper>
+    </div>
   )
 }

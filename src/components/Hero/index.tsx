@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { Button } from '../Button'
 import { Header } from '../Header'
 
-import { Content, Title, TypewriterWrapper, Wrapper } from './styles'
+import styles from './Hero.module.scss'
 
 interface HeroProps {
   title: ReactNode
@@ -28,13 +28,13 @@ export function Hero({
   alt = 'Agência de Marketing Digital',
 }: HeroProps) {
   return (
-    <Wrapper>
+    <div className={styles.wrapper}>
       <Header />
 
-      <Content>
-        <Title>{title}</Title>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{title}</h1>
         {!!words?.length && (
-          <TypewriterWrapper>
+          <div className={styles.title}>
             <Typewriter
               words={words}
               loop={0}
@@ -44,30 +44,16 @@ export function Hero({
               cursor
               cursorBlinking
             />
-          </TypewriterWrapper>
+          </div>
         )}
         {buttonText && (
           <Button url={redirectUrl} func={buttonFunction}>
             {buttonText}
           </Button>
         )}
-      </Content>
+      </div>
 
-      <Image
-        src={image}
-        alt={alt}
-        fill
-        style={{
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          display: 'block',
-          minWidth: '100%',
-          minHeight: '100%',
-          objectFit: 'cover',
-        }}
-      />
-    </Wrapper>
+      <Image src={image} alt={alt} fill className={styles.image} />
+    </div>
   )
 }

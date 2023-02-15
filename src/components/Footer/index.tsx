@@ -1,22 +1,10 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 
+import Link from 'next/link'
+
 import { Button } from '../Button'
 
-import {
-  CallToAction,
-  CallToActionButtonWrapper,
-  CallToActionTitle,
-  Content,
-  Copyright,
-  Logo,
-  Menu,
-  MenuColumn,
-  MenuLink,
-  MenuLinkAnchor,
-  SocialMedia,
-  SocialMediaItem,
-  Wrapper,
-} from './styles'
+import styles from './Footer.module.scss'
 
 interface FooterProps {
   showCallToAction?: boolean
@@ -24,94 +12,108 @@ interface FooterProps {
 
 export function Footer({ showCallToAction = true }: FooterProps) {
   return (
-    <Wrapper>
+    <footer className={styles.wrapper}>
       {showCallToAction && (
-        <Content>
-          <CallToAction>
-            <CallToActionTitle>
+        <div className={styles.content}>
+          <div className={styles.callToAction}>
+            <h3 className={styles.callToActionTitle}>
               Vamos começar <br /> um projeto juntos?
-            </CallToActionTitle>
-            <CallToActionButtonWrapper>
+            </h3>
+            <div className={styles.callToActionButtonWrapper}>
               <p>
                 Seu projeto merece ficar em boas mãos, conte com a nossa agência
                 para isso. Tem todas informações e está preparado? Então vamos
                 começar!
               </p>
               <Button>Começar um projeto</Button>
-            </CallToActionButtonWrapper>
-          </CallToAction>
-        </Content>
+            </div>
+          </div>
+        </div>
       )}
-      <Content>
-        <Menu>
-          <MenuColumn>
-            <Logo href="/">
+      <div className={styles.content}>
+        <div className={styles.menu}>
+          <div className={styles.menuColumn}>
+            <Link href="/" className={styles.logo}>
               Agência<span>.</span>
-            </Logo>
+            </Link>
             <p>
               Muito mais que uma agência <br /> digital, uma parceria de <br />{' '}
               projetos incríveis.
             </p>
-            <SocialMedia>
-              <SocialMediaItem
+            <div className={styles.socialMedia}>
+              <a
+                className={styles.socialMediaItem}
                 href="https://facebook.com"
                 rel="noreferrer noopener"
                 target="_blank"
               >
                 <FaFacebookF size={22} />
-              </SocialMediaItem>
-              <SocialMediaItem
+              </a>
+              <a
+                className={styles.socialMediaItem}
                 href="https://linkedin.com"
                 rel="noreferrer noopener"
                 target="_blank"
               >
                 <FaLinkedinIn size={22} />
-              </SocialMediaItem>
-              <SocialMediaItem
+              </a>
+              <a
+                className={styles.socialMediaItem}
                 href="https://instagram.com"
                 rel="noreferrer noopener"
                 target="_blank"
               >
                 <FaInstagram size={22} />
-              </SocialMediaItem>
-            </SocialMedia>
-          </MenuColumn>
-          <MenuColumn>
+              </a>
+            </div>
+          </div>
+          <div className={styles.menuColumn}>
             <h4>Endereço</h4>
-            <MenuLinkAnchor href="https://www.google.com/maps/place/R.+Bar%C3%A3o+de+Paranapiacaba,+233+-+Encruzilhada,+Santos+-+SP,+11050-251/data=!4m2!3m1!1s0x94ce030cefa2ee17:0x516751d13a37e95?sa=X&ved=2ahUKEwjx2-nxzo79AhUfGbkGHY4GAkAQ8gF6BAgNEAI">
+            <a
+              className={styles.menuLink}
+              href="https://www.google.com/maps/place/R.+Bar%C3%A3o+de+Paranapiacaba,+233+-+Encruzilhada,+Santos+-+SP,+11050-251/data=!4m2!3m1!1s0x94ce030cefa2ee17:0x516751d13a37e95?sa=X&ved=2ahUKEwjx2-nxzo79AhUfGbkGHY4GAkAQ8gF6BAgNEAI"
+            >
               Barão Offices <br /> <br />
               Rua Barão de Paranapiacaba, 233 <br />
               Encruzilhada <br />
               Santos - SP <br />
               CEP 11050-251
-            </MenuLinkAnchor>
-          </MenuColumn>
-          <MenuColumn>
+            </a>
+          </div>
+          <div className={styles.menuColumn}>
             <h4>Menu</h4>
             <nav>
               <ul>
                 <li>
-                  <MenuLink href="/sobre">Sobre</MenuLink>
+                  <Link className={styles.menuLink} href="/sobre">
+                    Sobre
+                  </Link>
                 </li>
                 <li>
-                  <MenuLink href="/projetos">Serviços</MenuLink>
+                  <Link className={styles.menuLink} href="/projetos">
+                    Serviços
+                  </Link>
                 </li>
                 <li>
-                  <MenuLink href="/projetos">Projetos</MenuLink>
+                  <Link className={styles.menuLink} href="/projetos">
+                    Projetos
+                  </Link>
                 </li>
                 <li>
-                  <MenuLink href="/blog">Blog</MenuLink>
+                  <Link className={styles.menuLink} href="/blog">
+                    Blog
+                  </Link>
                 </li>
               </ul>
             </nav>
-          </MenuColumn>
-        </Menu>
-      </Content>
-      <Copyright>
-        <Content>
+          </div>
+        </div>
+      </div>
+      <div className={styles.copyright}>
+        <div className={styles.content}>
           Agência © {new Date().getFullYear()} Todos os direitos reservados
-        </Content>
-      </Copyright>
-    </Wrapper>
+        </div>
+      </div>
+    </footer>
   )
 }

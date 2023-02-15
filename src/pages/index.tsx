@@ -8,11 +8,7 @@ import { SectionContent } from '@/components/SectionContent'
 import { SectionTitle } from '@/components/SectionTitle'
 import { SEO } from '@/components/SEO'
 import { ServicesList } from '@/components/ServicesList'
-import {
-  Illustration,
-  IllustrationContent,
-  Paragraph,
-} from '@/styles/pages/home'
+import styles from '@/styles/pages/Home.module.scss'
 
 import illustration from '../../public/web-design.png'
 
@@ -39,26 +35,27 @@ export default function Home() {
       <main>
         <Section bg="light">
           <SectionContent>
-            <IllustrationContent>
+            <div className={styles.illustrationContent}>
               <SectionTitle bg="light">
                 Uma parceria de projetos incríveis
               </SectionTitle>
-              <Paragraph>
+              <p className={styles.paragraph}>
                 Somos uma agência de publicidade e marketing que trabalha com
                 soluções e estratégias para conectar sua marca com o consumidor
                 de forma humanizada, proporcionando novas oportunidades de
                 negócio e potencializando suas vendas.
-              </Paragraph>
-              <Paragraph>
+              </p>
+              <p className={styles.paragraph}>
                 Somos parceiros de projetos. Além de vestir a camisa, vibramos
                 com cada conquista. Inquietos na essência, nosso objetivo só é
                 alcançado depois do seu.
-              </Paragraph>
+              </p>
               <Button url="/orcamento">Fale conosco</Button>
-            </IllustrationContent>
+            </div>
             <div>
-              <Illustration
+              <Image
                 src={illustration}
+                className={styles.illustration}
                 alt="Ilustração contendo um celular, um notebook e uma paleta de cores digital"
               />
             </div>

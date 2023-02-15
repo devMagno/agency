@@ -16,9 +16,14 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@styles/*": ["src/styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "sassOptions": {
+    "includePaths": ["./src"],
+    "prependData": "@import \"~@styles/variable.scss\";"
+  }
 }

@@ -1,0 +1,36 @@
+.wrapper {
+  width: 100%;
+  padding: 60px $containerPadding;
+
+  p {
+    line-height: 1.5;
+    font-size: $font-md;
+    color: $secondary;
+
+    opacity: 0.8;
+
+    + p {
+      margin-top: 20px;
+    }
+  }
+
+  @media only screen and (min-width: $media-md) {
+    padding: 100px $containerPadding;
+  }
+
+  &.white {
+    background-color: $white;
+  }
+
+  &.dark {
+    background-color: $secondary;
+
+    p {
+      color: $white;
+    }
+  }
+
+  &.light {
+    background-color: $lightGray;
+  }
+}

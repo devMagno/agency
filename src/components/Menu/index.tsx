@@ -1,15 +1,9 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import clsx from 'clsx'
 
-import {
-  Address,
-  Content,
-  Item,
-  LinkItem,
-  List,
-  SocialMedia,
-  SocialMediaItem,
-  Wrapper,
-} from './styles'
+import Link from 'next/link'
+
+import styles from './Menu.module.scss'
 
 interface MenuProps {
   active: boolean
@@ -17,29 +11,39 @@ interface MenuProps {
 
 export function Menu({ active }: MenuProps) {
   return (
-    <Wrapper active={active}>
-      <Content>
+    <div className={clsx(styles.wrapper, active && styles.active)}>
+      <div className={styles.content}>
         <nav>
-          <List>
-            <Item>
-              <LinkItem href="/sobre">Sobre</LinkItem>
-            </Item>
-            <Item>
-              <LinkItem href="/servicos">Serviços</LinkItem>
-            </Item>
-            <Item>
-              <LinkItem href="/projetos">Projetos</LinkItem>
-            </Item>
-            <Item>
-              <LinkItem href="/blog">Blog</LinkItem>
-            </Item>
-            <Item>
-              <LinkItem href="/orcamento">Orçamento</LinkItem>
-            </Item>
-          </List>
+          <ul className={styles.list}>
+            <li className={styles.item}>
+              <Link className={styles.linkItem} href="/sobre">
+                Sobre
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link className={styles.linkItem} href="/servicos">
+                Serviços
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link className={styles.linkItem} href="/projetos">
+                Projetos
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link className={styles.linkItem} href="/blog">
+                Blog
+              </Link>
+            </li>
+            <li className={styles.item}>
+              <Link className={styles.linkItem} href="/orcamento">
+                Orçamento
+              </Link>
+            </li>
+          </ul>
         </nav>
         <div>
-          <Address>
+          <address className={styles.address}>
             <span>Endereço</span>
             <a href="https://www.google.com/maps/place/R.+Bar%C3%A3o+de+Paranapiacaba,+233+-+Encruzilhada,+Santos+-+SP,+11050-251/data=!4m2!3m1!1s0x94ce030cefa2ee17:0x516751d13a37e95?sa=X&ved=2ahUKEwjx2-nxzo79AhUfGbkGHY4GAkAQ8gF6BAgNEAI">
               Barão Offices <br /> <br />
@@ -47,32 +51,35 @@ export function Menu({ active }: MenuProps) {
               Encruzilhada, Santos - SP <br />
               CEP 11050-251
             </a>
-          </Address>
-          <SocialMedia>
-            <SocialMediaItem
+          </address>
+          <div className={styles.socialMedia}>
+            <a
+              className={styles.socialMediaItem}
               href="https://facebook.com"
               rel="noreferrer noopener"
               target="_blank"
             >
               <FaFacebookF size={22} />
-            </SocialMediaItem>
-            <SocialMediaItem
+            </a>
+            <a
+              className={styles.socialMediaItem}
               href="https://linkedin.com"
               rel="noreferrer noopener"
               target="_blank"
             >
               <FaLinkedinIn size={22} />
-            </SocialMediaItem>
-            <SocialMediaItem
+            </a>
+            <a
+              className={styles.socialMediaItem}
               href="https://instagram.com"
               rel="noreferrer noopener"
               target="_blank"
             >
               <FaInstagram size={22} />
-            </SocialMediaItem>
-          </SocialMedia>
+            </a>
+          </div>
         </div>
-      </Content>
-    </Wrapper>
+      </div>
+    </div>
   )
 }

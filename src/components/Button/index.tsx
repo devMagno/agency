@@ -1,6 +1,8 @@
 import { ReactNode } from 'react'
 
-import { LinkButton, RegularButton } from './styles'
+import Link from 'next/link'
+
+import styles from './Button.module.scss'
 
 interface ButtonProps {
   children: ReactNode
@@ -9,11 +11,16 @@ interface ButtonProps {
 }
 
 export function Button({ children, url, func }: ButtonProps) {
-  if (url) return <LinkButton href={url}>{children}</LinkButton>
+  if (url)
+    return (
+      <Link className={styles.button} href={url}>
+        {children}
+      </Link>
+    )
 
   return (
-    <RegularButton onClick={func} type="button">
+    <button className={styles.button} onClick={func} type="button">
       {children}
-    </RegularButton>
+    </button>
   )
 }

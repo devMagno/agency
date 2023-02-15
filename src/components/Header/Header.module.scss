@@ -1,0 +1,148 @@
+.wrapper {
+  width: 100%;
+  height: auto;
+  padding: 0 $containerPadding;
+  background-color: transparent;
+  border-bottom: 1px solid rgba($white, 0.15);
+
+  top: 0;
+  left: 0;
+  z-index: 10;
+  position: fixed;
+
+  transition: background-color 0.3s;
+
+  &.active {
+    box-shadow: none !important;
+    border-bottom: none !important;
+    transition: background-color 0s;
+    background-color: transparent !important;
+  }
+
+  &.scrolledDown {
+    background-color: $white;
+    box-shadow: rgba($black, 0.15);
+  }
+
+  @media only screen and (min-width: $media-md) {
+    border-bottom: none;
+  }
+}
+
+.content {
+  height: 70px;
+  margin: 0 auto;
+  width: $containerWidth;
+  max-width: $containerMaxWidth;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: $primary;
+  font-size: $font-lg;
+
+  opacity: 1;
+  transition: opacity 1s;
+
+  span {
+    color: $white;
+  }
+
+  &.active {
+    opacity: 0;
+    transition: opacity 0s;
+  }
+
+  &.scrolledDown span {
+    color: $secondary;
+  }
+}
+
+.menuButtonWrapper {
+  display: flex;
+  align-items: center;
+
+  > span {
+    color: $white;
+    font-weight: bold;
+    font-size: $font-xs;
+
+    line-height: 1.4;
+    text-transform: uppercase;
+
+    margin-top: 2px;
+    margin-right: 4px;
+
+    opacity: 1;
+    transition: color 0.3s;
+  }
+
+  &.active > span {
+    opacity: 0;
+  }
+
+  &.scrolledDown > span {
+    color: $secondary;
+  }
+}
+
+.menuButton {
+  width: 46px;
+  height: 46px;
+  position: relative;
+  border-radius: $radius-full;
+  background-color: transparent;
+
+  display: flex;
+
+  span {
+    opacity: 1;
+    left: 10px;
+    width: 25px;
+    height: 2px;
+    display: block;
+    position: absolute;
+    background-color: $white;
+    transition: background-color 0.3s, transform 0.25s ease-in-out;
+
+    &:nth-child(1) {
+      top: 14px;
+    }
+
+    &:nth-child(2) {
+      top: 22px;
+      opacity: 1;
+    }
+
+    &:nth-child(3) {
+      top: 30px;
+    }
+  }
+
+  &.active {
+    background-color: $primary;
+
+    span {
+      &:nth-child(1) {
+        top: 22px;
+        transform: rotate(135deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: 22px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  &.scrolledDown span {
+    background-color: $secondary;
+  }
+}

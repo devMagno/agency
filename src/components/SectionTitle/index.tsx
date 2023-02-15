@@ -1,8 +1,9 @@
 import { ReactNode } from 'react'
+import clsx from 'clsx'
 
 import { background } from '@/types/styles'
 
-import { Title } from './styles'
+import styles from './SectionTitle.module.scss'
 
 interface SectionTitleProps {
   children: ReactNode
@@ -10,5 +11,5 @@ interface SectionTitleProps {
 }
 
 export function SectionTitle({ children, bg }: SectionTitleProps) {
-  return <Title bg={bg}>{children}</Title>
+  return <h2 className={clsx(styles.title, styles[bg])}>{children}</h2>
 }

@@ -1,0 +1,30 @@
+.illustration {
+  display: 'block';
+  object-fit: 'cover';
+
+  width: '100%';
+  margin-top: '40px';
+  margin-bottom: '-60px';
+
+  @media only screen and (min-width: $media-md) {
+    right: 10px;
+    bottom: -100px;
+    position: absolute;
+
+    width: 48%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.illustrationContent {
+  width: 100%;
+
+  @media only screen and (min-width: $media-md) {
+    width: 40%;
+  }
+}
+
+.paragraph {
+  margin: 35px 0;
+}
