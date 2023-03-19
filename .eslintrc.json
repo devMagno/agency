@@ -43,7 +43,8 @@
       }
     ],
     "react/no-array-index-key": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-nested-ternary": "off"
   },
   "overrides": [
     {

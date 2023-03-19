@@ -1,0 +1,58 @@
+.wrapper {
+  width: 100%;
+}
+
+.label {
+  display: block;
+  padding: 7px 0;
+
+  line-height: 1.4;
+  font-weight: 600;
+  color: $secondary;
+  font-size: $font-sm;
+}
+
+.input {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  display: block;
+  padding: 0 20px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 2px solid rgba($inputBackground, 0.15);
+  background-color: rgba($inputBackground, 0.04);
+
+  line-height: 50px;
+  color: $secondary;
+  font-size: $font-sm;
+
+  &:focus {
+    border: 2px solid $inputBackground;
+    background-color: rgba($inputBackground, 0.08);
+  }
+
+  &::placeholder {
+    color: $inputPlaceholder;
+  }
+}
+
+.select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+  &:required:invalid {
+    color: $inputPlaceholder;
+  }
+}
+
+.textarea {
+  resize: none;
+  height: 150px;
+  line-height: 1.5;
+  padding: 20px 20px 0;
+}

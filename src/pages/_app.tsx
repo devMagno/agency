@@ -5,7 +5,10 @@ import type { AppProps } from 'next/app'
 import '@/styles/reset.scss'
 import '@/styles/globals.scss'
 
-const archivo = Archivo({ subsets: ['latin'] })
+export const archivo = Archivo({
+  subsets: ['latin'],
+  weight: ['400', '600', '700'],
+})
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

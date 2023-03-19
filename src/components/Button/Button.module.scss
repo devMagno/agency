@@ -18,8 +18,10 @@
 }
 
 .button {
+  cursor: pointer;
+
   margin: 5px;
-  padding: 12px 30px;
+  padding: 15px 30px;
   position: relative;
   background-color: $primary;
   border-radius: $radius-full;
@@ -46,5 +48,57 @@
 
   &:hover::before {
     animation-name: pulse;
+  }
+
+  &.outline {
+    color: $secondary;
+    border: 2px solid $secondary;
+    background-color: transparent;
+
+    &::before {
+      display: none;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: $secondary;
+
+      &::before {
+        animation: none;
+      }
+    }
+  }
+
+  &.input {
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    line-height: 1.4;
+    text-align: center;
+    font-size: $font-xs;
+
+    &.outline {
+      // TODO: mudar estilo de hover, pra nao ficar igual ao ativo
+      &:hover {
+        color: initial;
+        background-color: initial;
+      }
+
+      &:hover,
+      &.checked {
+        color: $white;
+        background-color: $secondary;
+      }
+    }
+
+    @media only screen and (min-width: $media-md) {
+      font-size: $font-sm;
+    }
+  }
+
+  &.sm {
+    line-height: 1.3;
+    padding: 12px 30px;
   }
 }

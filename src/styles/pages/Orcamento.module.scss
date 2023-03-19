@@ -1,0 +1,140 @@
+.wrapper {
+  padding: 30px 0 100px;
+  background-color: $white;
+}
+
+.content {
+  margin: 0 auto;
+  width: $containerWidth;
+  max-width: $containerMaxWidth;
+
+  @media only screen and (min-width: $media-md) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.leftContainer {
+  padding-top: 50px;
+
+  @media only screen and (min-width: $media-md) {
+    max-width: 285px;
+    padding-right: 10px;
+  }
+}
+
+.logo {
+  color: $primary;
+  font-size: $font-xl;
+
+  display: block;
+  margin-bottom: 50px;
+
+  span {
+    color: $secondary;
+  }
+}
+
+.title {
+  font-weight: bold;
+  line-height: 1.1;
+  color: $secondary;
+  font-size: $font-2xl;
+
+  margin-bottom: 30px;
+
+  @media only screen and (min-width: $media-md) {
+    font-size: $font-4xl;
+  }
+}
+
+.text {
+  color: $secondary;
+  line-height: 1.5;
+  font-size: $font-sm;
+
+  opacity: 0.8;
+
+  @media only screen and (min-width: $media-md) {
+    font-size: $font-md;
+  }
+}
+
+.form {
+  @media only screen and (min-width: $media-md) {
+    width: 100%;
+    max-width: 975px;
+    padding-left: 110px;
+  }
+}
+
+.formTitle {
+  font-weight: bold;
+  color: $secondary;
+  line-height: 1.4;
+  font-size: $font-lg;
+
+  padding: 50px 20px 30px 0;
+}
+
+.radioContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  > * {
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  &.full > * {
+    flex: 1 1 100%;
+  }
+
+  @media only screen and (min-width: $media-md) {
+    > *,
+    &.full > * {
+      flex: 1 1 calc(33.333% - 10px);
+    }
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 40px;
+
+  .input {
+    flex: 1 1 100%;
+    padding: 7px 10px;
+  }
+
+  @media only screen and (min-width: $media-md) {
+    padding-top: 50px;
+
+    .input.half {
+      flex: 1 1 calc(50% - 10px);
+    }
+  }
+}
+
+.buttonContainer {
+  width: 100%;
+  text-align: right;
+}
+
+.privatePolicyText {
+  opacity: 0.9;
+  padding: 0 10px;
+  margin: 20px 0 10px;
+
+  text-align: left;
+  color: $secondary;
+  line-height: 1.4;
+  font-size: $font-xs;
+
+  a {
+    color: $secondary;
+    text-decoration: underline;
+  }
+}
